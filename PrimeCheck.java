@@ -41,13 +41,8 @@ public class PrimeCheck{
             // System.out.println("Randomly generated number: " + rand);
             randomlyGenerated = rand;
             
-            List<String> Primelines = Collections.emptyList(); 
-            try { 
-            Primelines = Files.readAllLines(Paths.get("C:\\Users\\20110949\\Desktop\\PrimeList.txt"), StandardCharsets.UTF_8); 
-            } catch (IOException e) { 
-            e.printStackTrace(); }
 
-            if(isPrime(randomlyGenerated) == true && Arrays.asList(Primelines).contains(randomlyGenerated) == false) {
+            if(isPrime(randomlyGenerated) == true) {
                System.out.println(randomlyGenerated + " is a prime number.");
                // System.out.println(tries + " total tries before getting a prime number");
                // System.exit(0);
@@ -57,15 +52,9 @@ public class PrimeCheck{
                        
             }
             
-            List<String> NotPrimelines = Collections.emptyList(); 
-               try { 
-                  Primelines = Files.readAllLines(Paths.get("C:\\Users\\20110949\\Desktop\\PrimeList.txt"), StandardCharsets.UTF_8); 
-               } catch (IOException e) { 
-                  e.printStackTrace(); 
-                  }
 
 
-             if(isPrime(randomlyGenerated) == false && Arrays.asList(NotPrimelines).contains(randomlyGenerated) == false){
+             if(isPrime(randomlyGenerated) == false){
                 System.out.println(randomlyGenerated + " is not a prime number.");
                 tries = tries + 1;
                 triesInt = (int)tries;
